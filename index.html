@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Sissors</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <p> Rock Paper Scissors </p>
+        </div>
+
+        <div class="flexContainer">
+            <div class="scores">
+                <h1 id="playerScore">Player Score:</h1><span id="currentPlayerScore">0</span>
+            </div>
+            <div class="scores">
+                <h1 id="computerScore">Computer Score: </h1> <span id="currentComputerScore">0</span>
+            </div>
+            <div class="scores">
+                <h1 id="tiedScore">Ties: </h1> <span id="currentTiedScore">0</span>
+            </div>
+        </div>
+
+        <div class="sectionWithButtons">
+
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        
+        </div>
+
+        <div id="clickRestart" class="startOverButtonDefault">
+
+            <button id="startOver">RESTART</button>
+        
+        </div>
+
+    </div>
+
+    <div class = "playByPlay">
+        <span id="currentRoundSelections">Click a button above to start the game!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
