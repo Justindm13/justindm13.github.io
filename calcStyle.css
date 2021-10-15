@@ -1,6 +1,16 @@
 * {
     font-family: sans-serif;
     user-select: none;
+    --primary-color: #414656;
+    --delete-color: #E54771;
+    --delete-color-text: white;
+    --numbers-color: #E4F0FF;
+    --numbers-color-text: #414656;
+    --operation-color: #00C9E7;
+    --clear-color: #00C9E7;
+    --clear-color-text: white;
+    --operation-color-text: white;
+
 }
 
 #header {
@@ -11,8 +21,8 @@
 
 #clearButton {
     flex: 1;
-    background-color: #00A0C6;
-    color: #ffffff;
+    background-color:var(--clear-color);
+    color: var(--clear-color-text);
     border-radius: 15px;
     font-size:150%;
     font-weight: bold;
@@ -25,8 +35,8 @@
 
 #deleteButton {
     flex: 1;
-    background-color: #FF7CA4;
-    color: #ffffff;
+    background-color:var(--delete-color);
+    color: var(--delete-color-text);
     border-radius: 15px;
     font-size:150%;
     font-weight: bold;
@@ -56,7 +66,7 @@
     max-width: 850px;
     min-height: 450px;
     box-sizing: border-box;
-    background-color: #00D7FF;
+    background-color: var(--primary-color);
     padding: 1.5% 1.5%;
     flex-wrap: wrap;
     border-radius: 20px;
@@ -105,8 +115,8 @@ margin: 5px 0px;
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color:#ffffff88;
-    color: white;
+    background-color:var(--operation-color);
+    color: var(--operation-color-text);
     border-radius: 15px;
     margin-bottom: 8px;
     font-size: 250%;
@@ -121,7 +131,7 @@ margin: 5px 0px;
 }
 
 #buttonContainer > #blankDiv {
-    background-color: #00D7FF !important;
+    background-color: var(--primary-color);
 }
 
 #buttonContainer > div {
@@ -129,8 +139,8 @@ margin: 5px 0px;
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color: #00A0C6;
-    color: #DEF1FF;
+    background-color: var(--numbers-color);
+    color: var(--numbers-color-text);
     border-radius: 15px;
     margin-bottom: 10px;
     font-size:250%;

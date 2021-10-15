@@ -92,6 +92,7 @@ document.getElementById('deleteButton').addEventListener('click', function() {
 }});
 
 document.getElementById('periodButton').addEventListener('click', function() {
+    displayOperatorCheck();
     if (limitPeriodInput()){;
     display.innerHTML += ".";
 }});
@@ -132,8 +133,8 @@ function keyboardEvent(e) {
         displayOperatorCheck();
         display.innerHTML += 0;
     } else if (e.key == "."){
-        if (limitPeriodInput()){;
         displayOperatorCheck();
+        if (limitPeriodInput()){;
         display.innerHTML += ".";
         }
     }
