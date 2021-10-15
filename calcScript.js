@@ -1,4 +1,9 @@
 let display = document.getElementById('output');
+let firstNumber = undefined; //this is only utilzed in the multiply and divide functionality
+let runningTotal =0; //this is utilized across the calculator to keep track of the result from the last completed operation
+let operation =null; //this is utilized to track the last operation button clicked by the user
+let lastButtonWasOperation = false; //this tracks if the last button pressed by the user was an operation button.
+let ongoingCalculationDisplay = document.getElementById('ongoingCalculation');
 
 document.getElementById('additionButton').addEventListener('click', addButtonFunction);
 document.getElementById('equalButton').addEventListener('click', equalButtonFunction);
@@ -82,14 +87,7 @@ document.getElementById('clearButton').addEventListener('click', function() {
     operation = null;
 });
 
-document.getElementById('deleteButton').addEventListener('click', function() {
-    if (lastButtonWasOperation==true){
-        return;
-    } else {
-    let popped = display.innerHTML.split("");
-    popped.pop();
-    display.innerHTML = popped.join("");
-}});
+document.getElementById('deleteButton').addEventListener('click', deleteInput);
 
 document.getElementById('periodButton').addEventListener('click', function() {
     displayOperatorCheck();
@@ -137,6 +135,8 @@ function keyboardEvent(e) {
         if (limitPeriodInput()){;
         display.innerHTML += ".";
         }
+    } else if (e.key == "Backspace") {
+        deleteInput();
     }
 }
     if (e.key == "+") {
@@ -188,16 +188,7 @@ function displayOperatorCheck () {
     }
 }
 
-let firstNumber = undefined; //this is only utilzed in the multiply and divide functionality
-let runningTotal =0; //this is utilized across the calculator to keep track of the result from the last completed operation
-let operation =null; //this is utilized to track the last operation button clicked by the user
-let lastButtonWasOperation = false; //this tracks if the last button pressed by the user was an operation button.
-let ongoingCalculationDisplay = document.getElementById('ongoingCalculation');
-
 function addButtonFunction () {
-    //if operation is set to equal, the last operation button to be 
-    //pressed was equal, so the function will move the running total 
-    //to the ongoing display, insert an + operator and be ready for the next number.
     console.log(operation, lastButtonWasOperation, runningTotal);
     if (operation == "equal") {
         ongoingCalculationDisplay.innerHTML = runningTotal + " + ";
@@ -234,9 +225,6 @@ function addButtonFunction () {
     }
 } 
 function subtractButtonFunction () {
-    //if operation is set to equal, the last operation button to be 
-    //pressed was equal, so the function will move the running total 
-    //to the ongoing display, insert an + operator and be ready for the next number.
     if (operation == "equal") {
         ongoingCalculationDisplay.innerHTML = runningTotal + " - ";
         display.innerHTML = runningTotal;
@@ -273,9 +261,6 @@ function subtractButtonFunction () {
        
 }
 function multiplyButtonFunction () {
-    //if operation is set to equal, the last operation button to be 
-    //pressed was equal, so the function will move the running total 
-    //to the ongoing display, insert an + operator and be ready for the next number.
     if (operation == "equal") {
         ongoingCalculationDisplay.innerHTML = runningTotal + " * ";
         display.innerHTML = runningTotal;
@@ -310,9 +295,6 @@ function multiplyButtonFunction () {
    
 
 function divideButtonFunction () {
-    //if operation is set to equal, the last operation button to be 
-    //pressed was equal, so the function will move the running total 
-    //to the ongoing display, insert an + operator and be ready for the next number.
     if (operation == "equal") {
         ongoingCalculationDisplay.innerHTML = runningTotal + " / ";
         display.innerHTML = runningTotal;
@@ -386,5 +368,15 @@ function limitRunningTotalToTwoDecimals (){
     runningTotal = parseFloat(runningTotal).toFixed(2);
     if ((runningTotal - Math.floor(runningTotal)) == 0) {
         runningTotal = parseInt(runningTotal);
+    }
+};
+
+function deleteInput() {
+    if (lastButtonWasOperation==true){
+        return;
+    } else {
+    let popped = display.innerHTML.split("");
+    popped.pop();
+    display.innerHTML = popped.join("");
     }
 };
