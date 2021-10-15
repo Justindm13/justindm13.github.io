@@ -4,49 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Sissors</title>
     <link rel="stylesheet" href="style.css">
-    
+    <title>Etch a Sketch</title>
 </head>
 <body>
-    <div class="content">
-        <div class="header">
-            <p> Rock Paper Scissors </p>
-        </div>
+    <header>
+        <h2 class='headerText'>ETCH A SKETCH</h2>
+        <a href="calculator.html"><h2>CALCULATOR</h2></a>
+    </header>
 
-        <div class="flexContainer">
-            <div class="scores">
-                <h1 id="playerScore">Player Score:</h1><span id="currentPlayerScore">0</span>
-            </div>
-            <div class="scores">
-                <h1 id="computerScore">Computer Score: </h1> <span id="currentComputerScore">0</span>
-            </div>
-            <div class="scores">
-                <h1 id="tiedScore">Ties: </h1> <span id="currentTiedScore">0</span>
-            </div>
-        </div>
-
-        <div class="sectionWithButtons">
-
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
-        
-        </div>
-
-        <div id="clickRestart" class="startOverButtonDefault">
-
-            <button id="startOver">RESTART</button>
-        
-        </div>
-
+    <div class = "EtchASketchContainer">
+        <h1>ETCH A SKETCH</h1>
     </div>
 
-    <div class = "playByPlay">
-        <span id="currentRoundSelections">Click a button above to start the game!</span>
+    <div class = "container">
+        <div id="settingsDiv">
+            <input type="color" id='colorPicker' value='#333333'>
+            <button id="rainbowButton">Rainbow</button>
+            <button id ="blackButton">Black</button>
+            <button id="whiteButton">Eraser</button>
+            <button id="resetButton">Clear</button>
+            <form action="">Sketch Size</form>
+            <br>
+            <input type="range" id='userSelectedSize' min="20" max="80" class="slider">   
+            <span id='sliderOutput'></span>     
+        </div>
+            <div id = "gridContainer" class='gridContainer'></div>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
-
 </html>

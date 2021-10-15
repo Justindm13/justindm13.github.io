@@ -1,117 +1,123 @@
-* {
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  
+body {
+    background-color: #ededed;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+
+body > div {
+    color: #333;
+  }
+  
+
+
+#gridContainer>div {
     box-sizing: border-box;
 }
 
-html, body{
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.content {
-    flex: 1 0 auto;
-}
-
-.header {
-    width: 100%;
-    height: 150px;
+#colorPicker {
     display: flex;
     justify-content: center;
-    font-size: 70px;
-    font-family: Arial, Helvetica, sans-serif;
-    align-items: center;
-    background-color: black;
-    color: white;
-    background-image: linear-gradient(#4b65a1, #1c3057);
+    margin: auto;
 }
 
-.flexContainer {
+.gridContainerResetButton {
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+} 
+
+#settingsDiv {
     display: flex;
     flex-flow: column;
-    align-items: left;
-    padding-top: 50px;
-    margin-left: 25%;
-    color: #1c3057;
+    padding: 50px 0px 20px 0px;
 }
 
-.scores {
-    display: flex;
-    align-items: center;
-    margin: 0px 50px 0px 50px;
-}
-
-#currentPlayerScore {
-    font-size: 35px;
-    padding: 6px 0px 0px 20px;
-}
-
-#currentComputerScore {
-    font-size: 35px;
-    padding: 6px 0px 0px 20px;
-}
-
-#currentTiedScore {
-    font-size: 35px;
-    padding: 6px 0px 0px 20px;
-}
-
-.sectionWithButtons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 80px;
-}
-
-
-
-button {
-    background-color: #1c3057;
-    color: white;
+#settingsDiv>button {
+    padding: 15px 25px 15px 25px;
+    margin: 20px 0px 20px 0px;
     border-radius: 30px;
-    height: 60px;
-    font-size: .9vw;
     border: none;
-    width: 8%;
-    margin: 0px 4%;
-}
-
-button:hover {
-    box-shadow: #1a3269 1px 1px 8px 0px;
-    background-color: #456abe ;
-    transition: .1s;
-}
-
-.playByPlay {
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
-    border: #5179d5 solid 5px;
+    background-color: rgb(136, 173, 206);
     color: white;
-    background-color: #1c3057;
-    flex-shrink: 0;
+}
+
+#gridContainer {
+    display: grid;
+    width: 500px;
     height: 500px;
+    box-shadow: 0px 0px 15px 0px rgb(148, 148, 148);
 }
 
-.startOverButtonDefault {
-    display: none;
-}
-
-.disappear {
-    display: none;
-}
-
-.startOverButton{
+.EtchASketchContainer {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+}
+
+.resetButtonDiv {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
 }
 
 
-#currentRoundSelections{
-    font-size: 35px;
-    text-align: center;
+#settingsDiv>button:hover {
+    transition: .1s;;
+    box-shadow: 2px 2px 10px 0px rgb(51, 99, 141);
+    background-color: rgb(51, 99, 141);
+}
+
+#settingsDiv>button:focus {
+    background-color: rgb(51, 99, 141);
+}
+
+
+h1 {
+    margin: 10px 0px 50px 0px;
+}
+  
+input[type='color'] {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 80px;
+    border: none;
+}
+
+  
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+}
+
+header {
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headerText {
+    color:white;
+}
+
+a {
+    color:white;
+    text-decoration: none;
 }
