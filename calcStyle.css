@@ -1,5 +1,5 @@
 * {
-    font-family: sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     user-select: none;
     --primary-color: #414656;
     --delete-color: #E54771;
@@ -10,13 +10,18 @@
     --clear-color: #00C9E7;
     --clear-color-text: white;
     --operation-color-text: white;
-
 }
 
 #header {
-    height: 50px;
-    background-color: rgb(37, 58, 104);
+    height: 100px;
+    background-color: #414656;
     margin-bottom: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vh;
+    
 }
 
 #clearButton {
@@ -150,7 +155,7 @@ margin: 5px 0px;
 #clearButton:hover {
     cursor: pointer;
     user-select: none;
-    background-color: #79ebff;
+    background-color: #48e5ff;
     color: white;
 }
 
@@ -164,7 +169,7 @@ margin: 5px 0px;
 #buttonContainer > div:hover {
     cursor: pointer;
     user-select: none;
-    background-color: #79ebff;
+    background-color: #48e5ff;
     color: white;
 }
 
@@ -178,4 +183,8 @@ margin: 5px 0px;
 }
 
 
-
+@media screen and (max-width: 992px) {
+    #calculatorContainer {
+        padding: 3%;
+    }
+}
