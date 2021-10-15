@@ -1,0 +1,171 @@
+* {
+    font-family: sans-serif;
+    user-select: none;
+}
+
+#header {
+    height: 50px;
+    background-color: rgb(37, 58, 104);
+    margin-bottom: 50px;
+}
+
+#clearButton {
+    flex: 1;
+    background-color: #00A0C6;
+    color: #ffffff;
+    border-radius: 15px;
+    font-size:150%;
+    font-weight: bold;
+    padding: 15px 10px;
+    margin: 5px 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#deleteButton {
+    flex: 1;
+    background-color: #FF7CA4;
+    color: #ffffff;
+    border-radius: 15px;
+    font-size:150%;
+    font-weight: bold;
+    padding: 15px 10px;
+    margin: 5px 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 9%;
+}
+
+#clearAndDeleteButtons {
+    padding-top: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: .75;
+}
+
+#calculatorContainer {
+    display: flex;
+    margin: auto;
+    min-width: 300px;
+    width: 35vw;
+    height: 45vw;
+    max-height: 1100px;
+    max-width: 850px;
+    min-height: 450px;
+    box-sizing: border-box;
+    background-color: #00D7FF;
+    padding: 1.5% 1.5%;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+#buttonAndOperationsContainer {
+    display: flex;
+    box-sizing: border-box;
+    flex: 4;
+    padding-top: 1%;
+    padding-bottom: -1%;
+}
+
+#displayContainer {
+    display: flex;
+    background-color: white;
+    flex: 1;
+    padding-right: 4%;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 15px;
+    flex-direction: column;
+}
+
+#displayContainer >div {
+margin: 5px 0px;
+}
+
+#output {
+    font-size: calc(12px + 1vw);
+    font-weight: bolder;
+    
+}
+
+#operationButtonContainer {
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    
+}
+
+#operationButtonContainer > div{
+    flex: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color:#ffffff88;
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 8px;
+    font-size: 250%;
+    font-weight: bold;   
+}
+
+#operationButtonContainer >div:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: white;
+    color: #00D7FF;
+}
+
+#buttonContainer > #blankDiv {
+    background-color: #00D7FF !important;
+}
+
+#buttonContainer > div {
+    flex-basis: 31%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #00A0C6;
+    color: #DEF1FF;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size:250%;
+    font-weight: bold;
+}
+
+#clearButton:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: #79ebff;
+    color: white;
+}
+
+#deleteButton:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: #ff4f84;
+    color: white;
+}
+
+#buttonContainer > div:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: #79ebff;
+    color: white;
+}
+
+#buttonContainer {
+    flex: 4;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 10px;
+}
+
+
+
