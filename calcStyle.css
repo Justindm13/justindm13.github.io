@@ -189,7 +189,6 @@ footer {
     height: 100px;
     background-color: #414656;
     color: white;
-    flex-wrap: wrap;
     text-align: center;
     font-size: small;
     font-family: 'Courier New', Courier, monospace;
@@ -209,5 +208,11 @@ footer {
 @media screen and (max-width: 650px) {
     #calculatorContainer {
         padding: 3.5%;
+    }
+    footer {
+        height: 50px;
+    }
+    #footerText{
+        margin-top: 10px;
     }
 }
