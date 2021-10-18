@@ -66,12 +66,6 @@ document.getElementById('threeButton').addEventListener('click', function() {
         display.innerHTML += 3;
    };
 });
-document.getElementById('fourButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 4;
-   };
-});
 document.getElementById('zeroButton').addEventListener('click', function() {
     displayOperatorCheck();
     if (limitInputLength()){
