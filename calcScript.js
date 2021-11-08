@@ -1,93 +1,5 @@
+
 let display = document.getElementById('output');
-let firstNumber = undefined; //this is only utilzed in the multiply and divide functionality
-let runningTotal =0; //this is utilized across the calculator to keep track of the result from the last completed operation
-let operation =null; //this is utilized to track the last operation button clicked by the user
-let lastButtonWasOperation = false; //this tracks if the last button pressed by the user was an operation button.
-let ongoingCalculationDisplay = document.getElementById('ongoingCalculation');
-
-document.getElementById('additionButton').addEventListener('click', addButtonFunction);
-document.getElementById('equalButton').addEventListener('click', equalButtonFunction);
-document.getElementById('divideButton').addEventListener('click', divideButtonFunction);
-document.getElementById('multiplyButton').addEventListener('click', multiplyButtonFunction);
-document.getElementById('subtractButton').addEventListener('click', subtractButtonFunction);
-
-//adds an event listener to each number button so when the user clicks a number, it populates up on the calculator display
-document.getElementById('sevenButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-         display.innerHTML += 7;
-    };
-});
-document.getElementById('eightButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 8;
-   };
-});
-document.getElementById('nineButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 9;
-   };
-});
-document.getElementById('fourButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 4;
-   };
-});
-document.getElementById('fiveButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 5;
-   };
-});
-document.getElementById('sixButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 6;
-   };
-});
-document.getElementById('oneButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 1;
-   };
-});
-document.getElementById('twoButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 2;
-   };
-});
-document.getElementById('threeButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 3;
-   };
-});
-document.getElementById('zeroButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitInputLength()){
-        display.innerHTML += 0;
-   };
-});
-document.getElementById('clearButton').addEventListener('click', function() {
-    display.innerHTML = '';
-    ongoingCalculationDisplay.innerHTML='';
-    runningTotal=0;
-    firstNumber=undefined;
-    lastButtonWasOperation = false; 
-    operation = null;
-});
-
-document.getElementById('deleteButton').addEventListener('click', deleteInput);
-
-document.getElementById('periodButton').addEventListener('click', function() {
-    displayOperatorCheck();
-    if (limitPeriodInput()){;
-    display.innerHTML += ".";
-}});
 
 //links keyboard presses to displaying numbers and running operation functions. Limits the user to 16 characters.
 document.addEventListener('keyup', keyboardEvent);
@@ -95,42 +7,25 @@ function keyboardEvent(e) {
     if (limitInputLength()) {;
     console.log(e);
     if (e.key == 9) {
-        displayOperatorCheck();
         display.innerHTML += 9;
     } else if (e.key == 8) {
-        displayOperatorCheck();
         display.innerHTML += 8;
     } else if (e.key == 7) {
-        displayOperatorCheck();
         display.innerHTML += 7;
     } else if (e.key == 6) {
-        displayOperatorCheck();
         display.innerHTML += 6;
     } else if (e.key == 5) {
-        displayOperatorCheck();
         display.innerHTML += 5;
     } else if (e.key == 4) {
-        displayOperatorCheck();
         display.innerHTML += 4;
     } else if (e.key == 3) {
-        displayOperatorCheck();
         display.innerHTML += 3;
     } else if (e.key == 2) {
-        displayOperatorCheck();
         display.innerHTML += 2;
     } else if (e.key == 1) {
-        displayOperatorCheck();
         display.innerHTML += 1;
     } else if (e.key == 0) {
-        displayOperatorCheck();
         display.innerHTML += 0;
-    } else if (e.key == "."){
-        displayOperatorCheck();
-        if (limitPeriodInput()){;
-        display.innerHTML += ".";
-        }
-    } else if (e.key == "Backspace") {
-        deleteInput();
     }
 }
     if (e.key == "+") {
@@ -150,7 +45,7 @@ function keyboardEvent(e) {
     }
 }
 
-//limits the user to 16 characters of input. 
+//limits the user to 16 characters of input.
 function limitInputLength () {
     if (display.innerHTML.length > 16) {
         return false;
@@ -158,219 +53,128 @@ function limitInputLength () {
     return true;
 }
 
-//limits the user to only putting 1 decimal
-function limitPeriodInput (){
-    if (display.innerHTML.includes(".")){
-        return false;
-    } else {
-        return true;
-    }
-}
+//adds an event listener to each number button so when the user clicks a number, it pops up on the display
+document.getElementById('sevenButton').addEventListener('click', function() {
+    if (limitInputLength()){
+         display.innerHTML += 7;
+    };
+});
+document.getElementById('eightButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 8;
+   };
+});
+document.getElementById('nineButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 9;
+   };
+});
+document.getElementById('fourButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 4;
+   };
+});
+document.getElementById('fiveButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 5;
+   };
+});
+document.getElementById('sixButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 6;
+   };
+});
+document.getElementById('oneButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 1;
+   };
+});
+document.getElementById('twoButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 2;
+   };
+});
+document.getElementById('threeButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 3;
+   };
+});
+document.getElementById('fourButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 4;
+   };
+});
+document.getElementById('zeroButton').addEventListener('click', function() {
+    if (limitInputLength()){
+        display.innerHTML += 0;
+   };
+});
+document.getElementById('clearButton').addEventListener('click', function() {
+    display.innerHTML = null;
+});
+//potential decimal button listener - NEED TO BUILD OUT FUNCTIONALITY
+// document.getElementById('periodButton').addEventListener('click', function() {
+//     display.innerHTML += ".";
+// });
 
-// Checks to see if the display is currently showing an operator function. If so, removes it so the next number can be typed in.
-function displayOperatorCheck () {
-    if (operation=="equal"){
-        display.innerHTML = '';
-        ongoingCalculationDisplay.innerHTML='';
-        runningTotal=0;
-        firstNumber=undefined;
-        lastButtonWasOperation = false; 
-        operation = null;
-    } else if (lastButtonWasOperation == true) {
-        display.innerHTML = '';
-        lastButtonWasOperation = false;        
-    }
-}
+document.getElementById('additionButton').addEventListener('click', addButtonFunction);
+document.getElementById('equalButton').addEventListener('click', equalButtonFunction);
+document.getElementById('divideButton').addEventListener('click', divideButtonFunction);
+document.getElementById('multiplyButton').addEventListener('click', multiplyButtonFunction);
+document.getElementById('subtractButton').addEventListener('click', subtractButtonFunction);
+let firstNumber = 0;
+let secondNumber = 0;
+let operation =null;
 
 function addButtonFunction () {
-    console.log(operation, lastButtonWasOperation, runningTotal);
-    if (operation == "equal") {
-        ongoingCalculationDisplay.innerHTML = runningTotal + " + ";
-        display.innerHTML = runningTotal;
-        operation = "add";
-        lastButtonWasOperation = true;
-        console.log("option 1");
-    } else if (operation !== "add" & lastButtonWasOperation==true){
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " + ";
-        operation = "add";
-        lastButtonWasOperation = true;
-        console.log("option 2");
-    } else {
-        if (runningTotal == 0){
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " + ";
-        runningTotal = runningTotal + parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        operation = "add";
-        lastButtonWasOperation = true;
-        console.log("option 3");
-        } else if (runningTotal !== 0){
-        runningTotal = runningTotal + parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = runningTotal + " + ";
-        display.innerHTML = runningTotal;
-        operation = "add";
-        lastButtonWasOperation = true;
-        console.log("option 4");
-        } else {
-            alert("Something went wrong adding");
-        }
-    }
-} 
+    firstNumber = parseInt(display.innerHTML);
+    operation = "add";
+    display.innerHTML = null;
+};
+
 function subtractButtonFunction () {
-    if (operation == "equal") {
-        ongoingCalculationDisplay.innerHTML = runningTotal + " - ";
-        display.innerHTML = runningTotal;
-        operation = "subtract";
-        lastButtonWasOperation = true;
-        console.log("sub option 1");
-    } else if (operation !== "subtract" & lastButtonWasOperation==true){
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " - ";
-        operation = "subtract";
-        lastButtonWasOperation = true;
-        console.log("sub option 2");
-    } else {
-        if (runningTotal == 0){
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " - ";
-        runningTotal = parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        operation = "subtract";
-        lastButtonWasOperation = true;
-        console.log("sub option 3", operation, lastButtonWasOperation);
-        } else if (runningTotal !== 0){
-        runningTotal = runningTotal - parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = runningTotal + " - ";
-        display.innerHTML = runningTotal;
-        operation = "subtract";
-        lastButtonWasOperation = true;
-        console.log("sub option 4");
-        } else {
-            alert("Something went wrong subtracting");
-        }
-    }
-       
-}
+    firstNumber = parseInt(display.innerHTML);
+    operation = "subtract";
+    display.innerHTML = null;
+};
+
 function multiplyButtonFunction () {
-    if (operation == "equal") {
-        ongoingCalculationDisplay.innerHTML = runningTotal + " * ";
-        display.innerHTML = runningTotal;
-        operation = "multiply";
-        lastButtonWasOperation = true;
-    }  else if (operation !== "multiply" & lastButtonWasOperation==true){
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " * ";
-        operation = "multiply";
-        lastButtonWasOperation = true;
-        console.log("multiply option 2");
-    } else {
-        if (runningTotal == 0){
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " * ";
-        runningTotal = parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        operation = "multiply";
-        lastButtonWasOperation = true;
-        console.log("multiply option 3");
-        } else {
-        runningTotal = runningTotal * parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = runningTotal + " * ";
-        display.innerHTML = runningTotal;
-        operation = "multiply";
-        lastButtonWasOperation = true;
-        console.log("multiply option 5");
-        }
-    }
-}
-   
+    firstNumber = parseInt(display.innerHTML);
+    operation = "multiply";
+    display.innerHTML = null;
+};
 
 function divideButtonFunction () {
-    if (operation == "equal") {
-        ongoingCalculationDisplay.innerHTML = runningTotal + " / ";
-        display.innerHTML = runningTotal;
-        operation = "divide";
-        lastButtonWasOperation = true;
-    }  else if (operation !== "divide" & lastButtonWasOperation==true){
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " / ";
-        operation = "divide";
-        lastButtonWasOperation = true;
-        console.log("divide option 2");
-    }else {
-        if (runningTotal == 0){
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = display.innerHTML + " / ";
-        runningTotal = parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        operation = "divide";
-        lastButtonWasOperation = true;
-        console.log("divide option 3");
-        } else {
-        runningTotal = runningTotal / parseFloat(display.innerHTML);
-        limitRunningTotalToTwoDecimals();
-        console.log(display.innerHTML);
-        ongoingCalculationDisplay.innerHTML = runningTotal + " / ";
-        display.innerHTML = runningTotal;
-        operation = "divide";
-        lastButtonWasOperation = true;
-        console.log("divide option 5");
-        }
-    }
-}    
+    firstNumber = parseInt(display.innerHTML);
+    operation = "divide";
+    display.innerHTML = null;
+};
+
 
 function equalButtonFunction () {
-secondNumber = parseFloat(display.innerHTML);
-console.log(runningTotal, display.innerHTML);
+secondNumber = parseInt(display.innerHTML);
+console.log(firstNumber, secondNumber);
 if (operation == "add") {
-    ongoingCalculationDisplay.innerHTML += " " + display.innerHTML + " = ";
-    runningTotal = parseFloat(runningTotal) + parseFloat(display.innerHTML);
-    limitRunningTotalToTwoDecimals();
-    display.innerHTML = runningTotal;
-    operation = "equal";
-    lastButtonWasOperation = true;
+    let result = firstNumber + secondNumber;
+    display.innerHTML = result;
+    operation = null;
 }
 if (operation == 'multiply') {
-    ongoingCalculationDisplay.innerHTML += " " + display.innerHTML + " = ";
-    runningTotal = parseFloat(runningTotal) * parseFloat(display.innerHTML);
-    limitRunningTotalToTwoDecimals();
-    display.innerHTML = runningTotal;
-    operation = "equal";
-    lastButtonWasOperation = true;
+    let result = firstNumber * secondNumber;
+    display.innerHTML = result;
+    operation = null;
 }
 if (operation =='subtract'){
-    ongoingCalculationDisplay.innerHTML += " " + display.innerHTML + " = ";
-    runningTotal = parseFloat(runningTotal) - parseFloat(display.innerHTML);
-    limitRunningTotalToTwoDecimals();
-    display.innerHTML = runningTotal;
-    operation = "equal";
-    lastButtonWasOperation = true;
+    let result = firstNumber - secondNumber;
+    display.innerHTML = result;
+    operation = null;
 }
 if (operation == 'divide') {
-    ongoingCalculationDisplay.innerHTML += " " + display.innerHTML + " = ";
-    runningTotal = parseFloat(runningTotal) / parseFloat(display.innerHTML);
-    limitRunningTotalToTwoDecimals();
-    display.innerHTML = runningTotal;
-    operation = "equal";
-    lastButtonWasOperation = true;
+    let result = firstNumber / secondNumber;
+    display.innerHTML = result;
+    operation = null;
 }
 }
-
-function limitRunningTotalToTwoDecimals (){
-    runningTotal = parseFloat(runningTotal).toFixed(2);
-    if ((runningTotal - Math.floor(runningTotal)) == 0) {
-        runningTotal = parseInt(runningTotal);
-    }
-};
-
-function deleteInput() {
-    if (lastButtonWasOperation==true){
-        return;
-    } else {
-    let popped = display.innerHTML.split("");
-    popped.pop();
-    display.innerHTML = popped.join("");
-    }
-};
+// const limitOutput {
+//     if (display.innerHTML
+// }

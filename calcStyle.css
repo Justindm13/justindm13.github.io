@@ -13,6 +13,18 @@
     margin: 0;
 }
 
+.websiteMenu {
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-emphasis: none;
+    text-decoration: none;
+    color: white;
+}
+
+
 #header {
     height: 100px;
     background-color: #414656;
