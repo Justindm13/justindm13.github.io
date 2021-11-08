@@ -33,7 +33,7 @@ const tic_tac_toe = {
         }
         if (playerOneTurn==true){
             var img = document.createElement('img');
-            img.src = 'x.png';
+            img.src = 'X.png';
             this.appendChild(img);
             this.className = ('player1');
             playerOneTurn=false;
@@ -41,7 +41,7 @@ const tic_tac_toe = {
             round++;
             } else if (playerOneTurn==false) {
             var img = document.createElement('img');
-            img.src = 'o.png';
+            img.src = 'O.png';
             this.appendChild(img);
             playerOneTurn=true;
             this.className = ('player2');
