@@ -7,12 +7,12 @@
   </head>
   <body style="text-align: center">
     <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #231F20"></canvas>
-    <script src="Build3/Compiled.loader.js"></script>
+    <script src="Build/Compiled.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build3/Compiled.data",
-        frameworkUrl: "Build3/Compiled.framework.js",
-        codeUrl: "Build3/Compiled.wasm",
+        dataUrl: "Build/Compiled.data",
+        frameworkUrl: "Build/Compiled.framework.js",
+        codeUrl: "Build/Compiled.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "snowBoarder",
         productName: "Snow Boarder",
